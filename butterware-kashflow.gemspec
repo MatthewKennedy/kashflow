@@ -4,28 +4,32 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "kashflow"
-  s.version = "0.0.8"
+  s.name = "butterware-kashflow"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Pogodan"]
-  s.date = "2012-03-30"
+  s.authors = ["Pogodan", "David Bourguignon"]
+  s.date = "2013-05-24"
   s.description = "A Ruby wrapper for the Kashflow Accouting SOAP API"
-  s.email = "dev@pogodan.com"
+  s.email = "david@butterware.co.uk"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.mkd"
   ]
   s.files = [
     ".document",
+    ".ruby-gemset",
+    ".ruby-version",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
     "README.mkd",
     "Rakefile",
     "VERSION",
+    "butterware-kashflow.gemspec",
     "config/kf_api_methods.yml",
     "kashflow.gemspec",
+    "lib/butterware-kashflow.rb",
     "lib/kashflow.rb",
     "lib/kashflow/api.rb",
     "lib/kashflow/api_method.rb",
@@ -33,10 +37,10 @@ Gem::Specification.new do |s|
     "test/helper.rb",
     "test/test_kashflow.rb"
   ]
-  s.homepage = "http://www.pogodan.com/projects"
+  s.homepage = "https://github.com/butterware/kashflow"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.19"
+  s.rubygems_version = "1.8.25"
   s.summary = "A Ruby wrapper for the Kashflow SOAP API"
 
   if s.respond_to? :specification_version then
