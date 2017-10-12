@@ -78,6 +78,7 @@ module Kashflow
     	if needs_object.include? operation
 	    	text = line ? object_alias[line.to_sym] : object_alias[object.to_sym]
 	    	text = "sup" if operation == "update" and object == "supplier"
+               text = "Receipt" if operation == "update" and object == "receipt"
 	    	if line == "line" # prevent add_invoice_payment trying to do below actions
           case name.to_s
           when "insert_invoice_line_with_invoice_number"
