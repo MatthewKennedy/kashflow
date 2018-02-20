@@ -1,6 +1,12 @@
 Kashflow
 ====================
 
+Update Feb 2018
+------------
+We're no longer maintaining this repository. If you are interested in taking over maintenance, please get in touch: dev@pogodan.com
+
+*****
+
 A Ruby wrapper for the Kashflow API
 
 Fork from https://github.com/pogodan/kashflow 
