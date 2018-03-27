@@ -96,19 +96,16 @@ module Kashflow
 
     # called with CamelCase version of method name
     def soap_call(name, method, params = {})
-      puts "name = #{name}, method = #{method}, params = #{params.inspect}"
       begin
         result = @service.request(name) do |soap|
           # soap.action = "KashFlow/#{method}"
 
           params = params.pop if params.is_a?(Array)
-          params_xml = params.map do |field, value|
-            xml_tag = field.to_s.camelize
-            "<#{xml_tag}>#{value}</#{xml_tag}>"
-          end.join("\n") unless params.blank?
+          params_xml = Gyoku.xml(params, { key_converter: :camelcase })
 
           params_xml = params_xml.gsub(/Id>/,"ID>") if params_xml
           params_xml = params_xml.gsub(/Dbid>/,"DBID>") if params_xml
+          params_xml = params_xml.gsub(/<InvoiceLine>/, "<InvoiceLine xsi:type=\"InvoiceLine\">") if params_xml
           pretext, posttext = object_wrapper(name, params_xml)
 
           soap.xml = %[<?xml version="1.0" encoding="utf-8"?>
