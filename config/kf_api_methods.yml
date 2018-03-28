@@ -1,5 +1,13 @@
 --- 
 - !ruby/object:Kashflow::ApiMethod 
+  name: GetCompanyDetails
+  request_attrs: []
+
+  response_attrs: 
+  - :type: CompanyDetails
+    :desc: An object of type CompanyDetails
+    :name: 
+- !ruby/object:Kashflow::ApiMethod 
   name: GetCustomer
   request_attrs: 
   - :type: String
