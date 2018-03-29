@@ -101,7 +101,7 @@ module Kashflow
           # soap.action = "KashFlow/#{method}"
 
           params = params.pop if params.is_a?(Array)
-          params_xml = Gyoku.xml(params, { key_converter: :camelcase })
+          params_xml = Gyoku.xml(params, { key_converter: :camelcase }) if params.present?
 
           params_xml = params_xml.gsub(/Id>/,"ID>") if params_xml
           params_xml = params_xml.gsub(/Dbid>/,"DBID>") if params_xml
